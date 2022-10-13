@@ -25,7 +25,7 @@ jobs:
     - name: Test
       run: go test -v ./...
     
-    - uses: 1ng3n/setup-chrome@latest
+    - uses: 1ng3n/setup-chrome@master
       with:
         chrome-version: beta
     - run: chrome --version
