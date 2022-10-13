@@ -24,3 +24,8 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+    
+    - uses: browser-actions/setup-chrome@latest
+      with:
+        chrome-version: beta
+    - run: chrome --version
