@@ -12,6 +12,18 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - uses: 1ng3n/init-ci@main
+      - name: check output
+        shell: bash
+        run: echo "$runner"
+  check1:
+    needs: [setup]
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: "check output"
+        shell: bash
+        run: | 
+          echo "$runner"
+          echo set
   build:
     needs: [setup]
     runs-on: ${{ needs.setup.outputs.runner }}
@@ -28,8 +40,3 @@ jobs:
 
     - name: Test
       run: go test -v ./...
-    
-    - uses: 1ng3n/setup-chrome@master
-      with:
-        chrome-version: beta
-    - run: chrome --version
