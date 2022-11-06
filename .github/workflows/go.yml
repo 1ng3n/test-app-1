@@ -12,6 +12,7 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
       - uses: 1ng3n/init-ci@main
+        id: setup
       - name: check output
         shell: bash
         run: echo "$runner"
@@ -22,8 +23,8 @@ jobs:
       - name: "check output"
         shell: bash
         run: | 
-          echo "$runner"
-          echo set
+          echo ${{ needs.setup.steps.setup.outputs.runner }}
+          set
   build:
     needs: [setup]
     runs-on: ${{ needs.setup.outputs.runner }}
