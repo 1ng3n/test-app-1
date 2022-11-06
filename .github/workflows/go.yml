@@ -23,7 +23,8 @@ jobs:
       - name: "check output"
         shell: bash
         run: | 
-          echo ${{ jobs.setup.steps.setup.outputs.runner }}
+          echo ${{ needs.steps.setup.outputs.runner }}
+          echo ${{ needs.steps.setup.outputs.runners }}
           set
   build:
     needs: [setup]
