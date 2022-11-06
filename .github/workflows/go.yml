@@ -9,12 +9,13 @@ on:
 
 jobs:
   setup:
-    runs-on: [ubuntu-latest]
-    outputs:
-      runner: ${{ steps.setup.outputs.runner }}
-    steps:
-      - uses: 1ng3n/init-ci@main
-        id: setup
+#     runs-on: [ubuntu-latest]
+#     outputs:
+#       runner: ${{ steps.setup.outputs.runner }}
+#     steps:
+#       - uses: 1ng3n/init-ci@main
+#         id: setup
+    uses: "1ng3n/init-ci/.github/workflows/shared.yml@main"
 
   check1:
     needs: [setup]
