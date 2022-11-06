@@ -11,7 +11,7 @@ jobs:
   setup:
     runs-on: [ubuntu-latest]
     outputs:
-      runners: ${{ steps.setup.outputs.runner }}
+      runner: ${{ steps.setup.outputs.runner }}
     steps:
       - uses: 1ng3n/init-ci@main
         id: setup
